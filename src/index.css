@@ -1,13 +1,84 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #36c5f5;
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol,
+ul {
+    padding-left: 30px;
+}
+
+.board-row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.status {
+    margin-bottom: 10px;
+}
+
+.square {
+    background: hsla(0, 0%, 100%, 0.788);
+    border: 1px solid hsl(0, 0%, 60%);
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+}
+
+.square:hover {
+    background-color: hsla(0, 0%, 70%, 0.788);
+    cursor: pointer;
+}
+
+.square:focus {
+    outline: none;
+}
+
+.kbd-navigation .square:focus {
+    background: hsl(0, 0%, 87%);
+}
+
+.game {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background: #333;
+    border: 5px solid #111;
+    border-radius: 1rem;
+}
+
+.resetbtn {
+    margin-top: 5px;
+    padding: 1em;
+    background-color: hsl(195, 95%, 64%);
+    border: none;
+    border-radius: 0.7rem;
+    color: hsl(210, 17%, 40%);
+}
+
+.resetbtn:hover {
+    background-color: hsl(195, 96%, 35%);
+    color: hsl(210, 17%, 18%);
+    cursor: pointer;
+}
+
+.game-info {
+    margin-left: 20px;
+}
+
+.header {
+    margin-right: 1em;
 }
