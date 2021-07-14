@@ -7,8 +7,6 @@ import Reset from "./reset.jsx";
 import calculateWinner from "../Helpers/calculateWinner.js";
 import RandomBool from "../Helpers/randomBool.js";
 
-const randomBoolean = RandomBool()
-
 // The actual game component
 export default class Game extends React.Component {
 
@@ -18,7 +16,7 @@ export default class Game extends React.Component {
         super(props);
         this.state = {
           squares: Array(9).fill(null),
-          xIsNext: randomBoolean,
+          xIsNext: RandomBool(5), // Make a random value using the RandomBool function
         }
       }
 
@@ -28,13 +26,10 @@ export default class Game extends React.Component {
       const confirmChoice = confirm("Are you really sure you want to reset the board?") // Ask the user if they are sure
       if (!confirmChoice) return // If they aren't sure, return
 
-      // Make a new array of NULLs
-      const cleanSquares = Array(9).fill(null)
-
       // Update state
       this.setState({ 
-        xIsNext: this.state.xIsNext,
-        squares: cleanSquares,
+        xIsNext: RandomBool(7),  // Get a 70%/30% random bool value.
+        squares: Array(9).fill(null), // Get a clean array of NULLs
       })
     }
 
